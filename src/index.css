@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* container */
+  .care-container {
+    @apply w-10/12 m-auto;
+  }
+
+  /* Scroll */
+  .scroll-hidden::-webkit-scrollbar {
+    display: none;
+  }
+  .scroll-style::-webkit-scrollbar {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(66, 245, 141) rgb(66, 245, 141);
+  }
+  .scroll-style::-webkit-scrollbar {
+    @apply w-2;
+  }
+  .scroll-style::-webkit-scrollbar-track {
+    @apply bg-slate-700;
+  }
+  .scroll-style::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-gradient-to-tr from-blue-500 to-green-500 via-teal-500;
+  }
+}
+.react-tel-input {
+	font-size: 0.9rem !important;
+}
+
+.react-tel-input .form-control {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	height: 2.4rem !important;
+	position: relative;
+	letter-spacing: .01rem;
+	border-radius: 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	font-size: 0.9rem !important;
+  border-radius: 5px !important;
+  margin-left: 1.3rem !important;
+
+}
+.react-tel-input .selected-flag{
+  width: 2.7rem !important;
+  margin-right: 5px;
+}
+
+.ant-table-cell{
+  padding-top: 6px !important;
+  padding-bottom: 6px !important;
+
+}

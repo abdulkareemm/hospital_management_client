@@ -25,7 +25,7 @@ const Navbar = () => {
     return () => {
       window.removeEventListener("scroll", onNavScroll);
     };
-  }, []);
+  }, [user]);
   return (
     <header
       className={`${

@@ -1,7 +1,7 @@
 
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {Home} from "./pages"
+import {AdminLogin, Home} from "./pages"
 function App() {
   return (
     <div className="flex flex-col h-screen bg-[#e0f0fd]">
@@ -9,8 +9,9 @@ function App() {
       <BrowserRouter>
       <Routes>
         <Route path="/" exact element={<Home/>}/>
+        {/* Admin routes */}
+        <Route path="/admin/login" exact element={<AdminLogin/>}/>
       </Routes>
-      Test
       </BrowserRouter>
     </div>
   );

@@ -1,7 +1,7 @@
 
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {AdminLogin, ClinicLogin, DoctorLogin, Home, PatientLogin} from "./pages"
+import {AdminLogin, ClinicLogin, DoctorLogin, Home, PatientLogin, PatientRegister} from "./pages"
 function App() {
   return (
     <div className="flex flex-col h-screen bg-[#e0f0fd]">
@@ -17,6 +17,7 @@ function App() {
           <Route path="/doctor/login" exact element={<DoctorLogin />} />
           {/* Patient Routes */}
           <Route path="/login" exact element={<PatientLogin />} />
+          <Route path="/register" exact element={<PatientRegister />} />
         </Routes>
       </BrowserRouter>
     </div>

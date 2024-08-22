@@ -1,7 +1,7 @@
 
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {AdminLogin, ClinicLogin, DoctorLogin, Home, PatientLogin, PatientRegister} from "./pages"
+import {AdminDashboard, AdminLogin, ClinicLogin, DoctorLogin, Home, PatientLogin, PatientRegister} from "./pages"
 function App() {
   return (
     <div className="flex flex-col h-screen bg-[#e0f0fd]">
@@ -11,6 +11,8 @@ function App() {
           <Route path="/" exact element={<Home />} />
           {/* Admin Routes */}
           <Route path="/admin/login" exact element={<AdminLogin />} />
+          <Route path="/admin/dashboard" exact element={<AdminDashboard />} />
+
           {/* Clinic Routes */}
           <Route path="/clinic/login" exact element={<ClinicLogin />} />
           {/* Doctor Routes */}

@@ -45,7 +45,7 @@ const Login = () => {
         localStorage.setItem("user", JSON.stringify(response.data.hospital));
         dispatch(setUser(response.data.hospital));
         setTimeout(() => {
-          navigate("/");
+          navigate("/admin/dashboard");
         }, 2000);
       } else {
         toast.error(response.data.msg);

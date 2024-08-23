@@ -11,7 +11,7 @@ const AdminProtect = (props) => {
   const getAdmin = async () => {
     try {
       const response = await axios.get(
-        `${process.env.REACT_APP_LOCAL_SERVER_HOST}hospital/get-admin-info`,
+        `${process.env.REACT_APP_LOCAL_SERVER_HOST}hospital/info`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -20,7 +20,7 @@ const AdminProtect = (props) => {
         }
       );
       if (response.data.success) {
-        toast.success(response.data.msg);
+        if (response.data.msg) toast.success(response.data.msg);
         localStorage.setItem("user", JSON.stringify(response.data.hospital));
 
         dispatch(setUser(response.data.hospital));

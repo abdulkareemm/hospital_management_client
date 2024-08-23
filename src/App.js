@@ -1,7 +1,7 @@
 
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import {AdminDashboard, AdminLogin, ClinicLogin, DoctorLogin, Home, PatientLogin, PatientRegister} from "./pages"
+import {AddClinic, AdminDashboard, AdminLogin, ClinicLogin, DoctorLogin, Home, PatientLogin, PatientRegister} from "./pages"
 import { Admin } from "./components";
 function App() {
   return (
@@ -18,6 +18,15 @@ function App() {
             element={
               <Admin>
                 <AdminDashboard />
+              </Admin>
+            }
+          />
+          <Route
+            path="/admin/add-clinic"
+            exact
+            element={
+              <Admin>
+                <AddClinic />
               </Admin>
             }
           />

@@ -5,6 +5,8 @@ export { default as DoctorLogin } from "./Doctor/Login";
 export { default as PatientLogin } from "./Patient/Login";
 export { default as PatientRegister } from "./Patient/Register";
 export { default as AdminDashboard} from "./Admin/Dashboard"
+export { default as AddClinic } from "./Admin/AddClinic";
+
 
 
 

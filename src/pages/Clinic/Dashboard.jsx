@@ -67,11 +67,11 @@ const Dashboard = () => {
       },
     },
   ];
-  const deleteDoctor = async (doctorcId) => {
+  const deleteDoctor = async (doctorId) => {
     try {
       const response = await axios.post(
         `${process.env.REACT_APP_LOCAL_SERVER_HOST}clinic/delete-doctor`,
-        { doctorcId },
+        { doctorId },
         {
           headers: {
             "Content-Type": "application/json",

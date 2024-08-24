@@ -109,6 +109,7 @@ const Dashboard = () => {
         toast.error(response.data.msg);
       }
     } catch (err) {
+        console.log(err)
       if (err.response?.data.msg) {
         toast.error(err.response.data.msg + ",Please login ");
       }
@@ -120,7 +121,7 @@ const Dashboard = () => {
   }, []);
 
   return (
-    <div className="mt-24 bg-white">
+    <div className="">
       <Layout>
         <div className='className="flex flex-col gap-y-4 bg-gray-100'>
           {/* count of users in system */}

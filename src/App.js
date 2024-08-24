@@ -10,6 +10,7 @@ import {
   Home,
   PatientLogin,
   PatientRegister,
+  UpdateClinic,
 } from "./pages";
 import { Admin, ClinicProtect } from "./components";
 function App() {
@@ -48,6 +49,15 @@ function App() {
             element={
               <ClinicProtect>
                 <ClinicDashboard />
+              </ClinicProtect>
+            }
+          />
+          <Route
+            path="/clinic/update-info"
+            exact
+            element={
+              <ClinicProtect>
+                <UpdateClinic />
               </ClinicProtect>
             }
           />

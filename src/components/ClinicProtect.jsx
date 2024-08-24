@@ -4,7 +4,6 @@ import { Navigate } from "react-router-dom";
 
 const ClinicProtect = (props) => {
   const user = JSON.parse(localStorage.getItem("user"));
-  console.log(user)
 
   if (user?.role === "clinic") {
     return props.children;

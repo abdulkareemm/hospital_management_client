@@ -8,6 +8,8 @@ export { default as AdminDashboard} from "./Admin/Dashboard"
 export { default as AddClinic } from "./Admin/AddClinic";
 export { default as ClinicDashboard } from "./Clinic/Dashboard";
 export { default as UpdateClinic } from "./Clinic/UpdateInfo";
+export { default as AddDoctor } from "./Clinic/AddDoctor";
+
 
 
 

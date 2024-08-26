@@ -2,6 +2,7 @@ import { Toaster } from "react-hot-toast";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import {
   AddClinic,
+  AddDoctor,
   AdminDashboard,
   AdminLogin,
   ClinicDashboard,
@@ -58,6 +59,15 @@ function App() {
             element={
               <ClinicProtect>
                 <UpdateClinic />
+              </ClinicProtect>
+            }
+          />
+          <Route
+            path="/clinic/add-doctor"
+            exact
+            element={
+              <ClinicProtect>
+                <AddDoctor />
               </ClinicProtect>
             }
           />

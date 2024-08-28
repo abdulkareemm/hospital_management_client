@@ -7,6 +7,7 @@ import {
   AdminLogin,
   ClinicDashboard,
   ClinicLogin,
+  DoctorDashboard,
   DoctorLogin,
   Home,
   PatientLogin,
@@ -74,6 +75,8 @@ function App() {
 
           {/* Doctor Routes */}
           <Route path="/doctor/login" exact element={<DoctorLogin />} />
+          <Route path="/doctor/dashboard" exact element={<DoctorDashboard />} />
+
           {/* Patient Routes */}
           <Route path="/login" exact element={<PatientLogin />} />
           <Route path="/register" exact element={<PatientRegister />} />

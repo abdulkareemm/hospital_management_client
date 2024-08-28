@@ -205,11 +205,11 @@ const Dashboard = () => {
       navigate("/");
     }
   };
-  useEffect(() => {
-    getTodayAppointments();
-  }, []);
+  // useEffect(() => {
+  //   getTodayAppointments();
+  // }, []);
   return (
-    <div className="mt-24">
+    <div className="">
       <Layout>
         {" "}
         <div>

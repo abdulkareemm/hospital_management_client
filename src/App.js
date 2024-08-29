@@ -13,6 +13,7 @@ import {
   PatientLogin,
   PatientRegister,
   UpdateClinic,
+  UpdateDoctor,
 } from "./pages";
 import { Admin, ClinicProtect } from "./components";
 function App() {
@@ -76,6 +77,7 @@ function App() {
           {/* Doctor Routes */}
           <Route path="/doctor/login" exact element={<DoctorLogin />} />
           <Route path="/doctor/dashboard" exact element={<DoctorDashboard />} />
+          <Route path="/doctor/update-info" exact element={<UpdateDoctor />} />
 
           {/* Patient Routes */}
           <Route path="/login" exact element={<PatientLogin />} />

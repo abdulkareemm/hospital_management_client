@@ -18,9 +18,6 @@ const Navbar = () => {
     }
   };
   useEffect(() => {
-    if (!user && localStorage.getItem("user")) {
-      dispatch(setUser(JSON.parse(localStorage.getItem("user"))));
-    }
     window.addEventListener("scroll", onNavScroll);
     return () => {
       window.removeEventListener("scroll", onNavScroll);
@@ -85,7 +82,7 @@ const Navbar = () => {
                 <BsChevronDown className="rotate-0 cursor-pointer transition-all duration-300 w-4 mt-1 group-hover:rotate-180 group-hover:text-[#853288b3]" />
               </div>
               <div className="invisible absolute z-50 flex w-[200px] flex-col bg-gray-100 py-1  text-purple-600 shadow-xl group-hover:visible">
-                {user?.role !== "docotr" && (
+                {user?.role !== "doctor" && (
                   <>
                     <a
                       className="my-1  hover:px-4 hover:text-[#853288b3]  block  py-1 font-semibold text-purple-600  md:mx-2 transition-all "
@@ -97,7 +94,7 @@ const Navbar = () => {
                   </>
                 )}
 
-                {user?.role === "docotr" && (
+                {user?.role === "doctor" && (
                   <Link
                     className="my-1  hover:px-4 hover:text-[#853288b3]  block  py-1 font-semibold text-purple-600 md:mx-2 transition-all  "
                     to={"/doctor/dashboard"}

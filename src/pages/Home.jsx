@@ -12,7 +12,6 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 const Home = () => {
-  const { user } = useSelector((state) => state.user);
   const [hospital, setHospital] = useState({});
   const clinicRef = useRef(null);
   const [clinic, setClinics] = useState([]);

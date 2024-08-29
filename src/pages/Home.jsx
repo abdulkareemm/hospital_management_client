@@ -41,7 +41,7 @@ const Home = () => {
   }, []);
   return (
     <>
-      <Nav/>
+      <Nav />
       <div className="flex flex-col mt-28 h-auto bg-white">
         {/* section 1 */}
         <div className="flex h-screen care-container">
@@ -159,7 +159,7 @@ const Home = () => {
             {/* title */}
             <div className="w-[50%]">
               <h1 className="text-purple-600 text-3xl font-bold ">
-                Availabe Features in Our Clinic
+                Available Features in Our Clinic
               </h1>
               <div className="w-[60%] py-3">Meet our Experts & Book Online</div>
             </div>

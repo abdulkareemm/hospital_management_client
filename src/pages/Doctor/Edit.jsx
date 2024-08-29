@@ -67,7 +67,8 @@ const Update = () => {
         toast.success(response.data.msg, { duration: 2000 });
         navigate("/clinic/dashboard");
       } else {
-        toast.error(response.data.msg);
+
+        toast.error(response.data.error);
       }
     } catch (err) {
       toast.error(err.response.data.msg, { duration: 2000 });

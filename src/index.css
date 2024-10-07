@@ -62,3 +62,6 @@
   padding-bottom: 6px !important;
 
 }
+.ant-table-body{
+  min-height: 400px;
+}

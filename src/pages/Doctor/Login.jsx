@@ -50,6 +50,7 @@ const Login = () => {
         toast.error(response.data.msg);
       }
     } catch (err) {
+      console.log(err)
       toast.error(err.response.data.msg, { duration: 2000 });
     }
   };

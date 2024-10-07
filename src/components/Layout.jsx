@@ -1,13 +1,17 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
-import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AiTwotoneHome } from "react-icons/ai";
 import { BsBuildingFillAdd, BsPersonFillAdd } from "react-icons/bs";
 import { AiFillEdit } from "react-icons/ai";
 import { HiOutlineBanknotes } from "react-icons/hi2";
+import { setUser } from "../redux/userSlice";
 
 const Layout = (props) => {
   const { user } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
   const location = useLocation();
   const adminMenu = [
     { name: "Home", path: "/admin/dashboard", icon: <AiTwotoneHome /> },
@@ -106,6 +110,18 @@ const Layout = (props) => {
               </div>
             );
           })}
+        </div>
+        <div className="absolute bottom-10">
+          <button
+            className="mr-8 bg-[#9718ec] p-2 w-[100px] text-white rounded-md"
+            onClick={() => {
+              navigate("/");
+              localStorage.clear();
+              dispatch(setUser(null));
+            }}
+          >
+            Logout
+          </button>
         </div>
       </div>
       {/* body */}

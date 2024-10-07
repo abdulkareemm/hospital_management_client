@@ -10,6 +10,7 @@ import {
   DoctorDashboard,
   DoctorLogin,
   Home,
+  MakeAppointment,
   PatientLogin,
   PatientRegister,
   UpdateClinic,
@@ -82,6 +83,11 @@ function App() {
           {/* Patient Routes */}
           <Route path="/login" exact element={<PatientLogin />} />
           <Route path="/register" exact element={<PatientRegister />} />
+          <Route
+            path="/patient/make-appointment/:clinicId"
+            exact
+            element={<MakeAppointment />}
+          />
         </Routes>
       </BrowserRouter>
     </div>

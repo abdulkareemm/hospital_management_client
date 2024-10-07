@@ -22,6 +22,7 @@ const Dashboard = () => {
   const [reasonD, setReasonD] = useState("");
   const navigate = useNavigate();
   const { user } = useSelector((state) => state.user);
+  console.log(localStorage.getItem("token"));
   const appointmentsColumns = [
     {
       key: "33",
@@ -161,7 +162,7 @@ const Dashboard = () => {
       const response = await axios.post(
         `${process.env.REACT_APP_LOCAL_SERVER_HOST}doctor/make-daignosis`,
         {
-          clinicId: user.clinic,
+          clinicId: user.clinic._id,
           patientId,
           time: moment().format("HH:mm"),
           daignosis: daignosisText,
@@ -186,7 +187,7 @@ const Dashboard = () => {
   const getTodayAppointments = async () => {
     try {
       const response = await axios.post(
-        `${process.env.REACT_APP_LOCAL_SERVER_HOST}clinic/get-today-appointemnts`,
+        `${process.env.REACT_APP_LOCAL_SERVER_HOST}clinic/get-today-appointments`,
         { clinicId: user.clinic },
         {
           headers: {
@@ -205,27 +206,30 @@ const Dashboard = () => {
       navigate("/");
     }
   };
-  // useEffect(() => {
-  //   getTodayAppointments();
-  // }, []);
+  useEffect(() => {
+    getTodayAppointments();
+  }, []);
   return (
     <div className="">
       <Layout>
         {" "}
         <div>
-          <div>
-            <h1>
-              Appointments for
-              <span className="text-red-200 mx-1">
-                {moment().format("DD-MM-YYYY")}
-              </span>
-              :
+          <div className="bg-red-100 rounded-lg p-2">
+            <h1 className="text-2xl text-gray-500 text-center">
+              Welcome
+              <span className="text-purple-400 italic"> {user.name} </span>
+              have a good day
             </h1>
           </div>
         </div>
         {/* list of users in system */}
-        <div>
-          <h1>Doctors List</h1>
+        <div className="mt-2">
+          <h1 className="mb-2">
+            Appointments List in
+            <span className="text-red-200 mx-1">
+              {moment().format("DD-MM-YYYY")}:
+            </span>
+          </h1>
           {appointments?.length > 0 ? (
             <Table
               columns={appointmentsColumns}
@@ -238,7 +242,7 @@ const Dashboard = () => {
               }}
             />
           ) : (
-            <h1>There is no Doctors </h1>
+            <h1>There is no Appointments </h1>
           )}
         </div>
       </Layout>

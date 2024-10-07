@@ -61,7 +61,7 @@ const Dashboard = () => {
             >
               Show
             </button>
-            <Modal open={reason} onCancel={() => setReason(false)}>
+            <Modal open={reason} onCancel={() => setReason(false)} footer={null}>
               <div className="flex flex-row gap-4">
                 <div>
                   <img

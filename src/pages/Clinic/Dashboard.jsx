@@ -158,7 +158,6 @@ const Dashboard = () => {
           </div>
           {/* list of users in system */}
           <div>
-            <h1>Doctors List</h1>
             {doctors?.length > 0 ? (
               <Table
                 columns={doctorsColumns}

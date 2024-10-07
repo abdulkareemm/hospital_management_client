@@ -13,7 +13,7 @@ export { default as AddDoctor } from "./Clinic/AddDoctor";
 export { default as DoctorDashboard } from "./Doctor/Dashboard";
 export { default as UpdateDoctor } from "./Doctor/Edit";
 export { default as Daignosis } from "./Doctor/PatientDaignosis";
-
+export {default as ClinicAppointments} from "./Clinic/Appointments"
 
 
 

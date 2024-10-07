@@ -5,6 +5,7 @@ import {
   AddDoctor,
   AdminDashboard,
   AdminLogin,
+  ClinicAppointments,
   ClinicDashboard,
   ClinicLogin,
   Daignosis,
@@ -72,6 +73,15 @@ function App() {
             element={
               <ClinicProtect>
                 <AddDoctor />
+              </ClinicProtect>
+            }
+          />
+          <Route
+            path="/clinic/today-appointments"
+            exact
+            element={
+              <ClinicProtect>
+                <ClinicAppointments />
               </ClinicProtect>
             }
           />

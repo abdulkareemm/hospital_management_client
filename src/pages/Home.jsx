@@ -32,7 +32,7 @@ const Home = () => {
         toast.error(response);
       }
     } catch (err) {
-      console.log(err)
+      console.log(err);
       toast.error(err.response?.data.msg);
     }
   };
@@ -132,13 +132,13 @@ const Home = () => {
           </div>
           {/* Swiper Clinics */}
           <div
-            className="w-[1400px] flex mx-auto mt-10 bg-purple-100 rounded-md"
+            className="w-[1300px] flex mx-auto bg-purple-100 rounded-md"
             ref={clinicRef}
           >
             <Swiper
-              slidesPerView={5}
-              spaceBetween={10}
-              className="care-container"
+              slidesPerView={4}
+              spaceBetween={50}
+              className="care-container mt-10"
             >
               <SliderButtons />
 

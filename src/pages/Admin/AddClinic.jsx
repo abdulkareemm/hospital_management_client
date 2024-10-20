@@ -109,7 +109,6 @@ const AddClinic = () => {
   const submit = async (e) => {
     e.preventDefault();
     const { ok, error } = validateClinicInfo(clinicInfo);
-
     if (!ok) return toast.error(error, { duration: 2000 });
     try {
       const formData = new FormData();
@@ -133,9 +132,10 @@ const AddClinic = () => {
         toast.success(response.data.msg, { duration: 2000 });
         navigate("/admin/dashboard");
       } else {
-        toast.error(response.data.msg);
+        toast.error(response.data.error);
       }
     } catch (err) {
+      console.log("dd");
       toast.error(err.response.data.msg, { duration: 2000 });
     }
   };
@@ -160,8 +160,10 @@ const AddClinic = () => {
                 className="w-[76%] p-2.5 outline-none focus:outline-none border-[1.2px] border-[#d5d5d5]  rounded-md"
               />
             </div>
-            <div className="w-[50%] ">
-              <span className="w-[20%]">Password : </span>
+            <div className="w-[50%] group">
+              <span className="w-[20%] group-hover:text-gray-300 font-semibold">
+                Password :{" "}
+              </span>
               <input
                 type="password"
                 name="password"
@@ -173,8 +175,10 @@ const AddClinic = () => {
           </div>
           {/* email && type*/}
           <div className="w-[97%] flex items-center gap-x-10 mt-10">
-            <div className="w-[50%] ">
-              <span className="w-[20%]">Clinic Email : </span>
+            <div className="w-[50%] group">
+              <span className="w-[20%] group-hover:text-gray-300 font-semibold">
+                Clinic Email :{" "}
+              </span>
               <input
                 type="text"
                 name="email"
@@ -183,8 +187,10 @@ const AddClinic = () => {
                 className="w-[76%] p-2.5 outline-none focus:outline-none border-[1.2px] border-[#d5d5d5]  rounded-md"
               />
             </div>
-            <div className="w-[50%] ">
-              <span className="w-[20%]">Clinic Type : </span>
+            <div className="w-[50%] group">
+              <span className="w-[20%] group-hover:text-gray-300 font-semibold">
+                Clinic Type :{" "}
+              </span>
               <input
                 type="text"
                 name="type"
@@ -196,8 +202,10 @@ const AddClinic = () => {
           </div>
           {/* mobile && fees*/}
           <div className="w-[97%] flex items-center gap-x-10 mt-10">
-            <div className="w-[50%] relative">
-              <span>Clinic Fee : </span>
+            <div className="w-[50%] relative group">
+              <span className="group-hover:text-gray-300 font-semibold">
+                Clinic Fee :{" "}
+              </span>
               <input
                 type="number"
                 name="fees"
@@ -210,8 +218,10 @@ const AddClinic = () => {
                 $
               </div>
             </div>
-            <div className="w-[50%] flex flex-row items-center">
-              <span className="w-[33%]">Clinic Mobile : </span>
+            <div className="w-[50%] flex flex-row items-center group">
+              <span className="w-[33%] group-hover:text-gray-300 font-semibold">
+                Clinic Mobile :{" "}
+              </span>
               <PhoneInput
                 country={"sy"}
                 className=" p-2.5 rounded-md"
@@ -222,7 +232,7 @@ const AddClinic = () => {
           {/* color picker and image upload */}
           <div className="w-[97%] flex items-center gap-x-10 mt-10">
             <div className="w-[50%] overflow-x-auto flex flex-col gap-y-2">
-              <span className="">Color Highlight : </span>
+              <span className="font-semibold">Color Highlight : </span>
               <ColorPicker
                 width={456}
                 height={228}
@@ -270,17 +280,23 @@ const AddClinic = () => {
           {/* time date and days work*/}
           <div className="w-[97%] flex items-center gap-x-10 mt-10  border-[1.2px] border-[#d5d5d5]  rounded-md">
             <div className="w-[50%] p-4 flex flex-col gap-y-2">
-              <div className="flex items-center gap-x-7">
-                <span>Time Works : </span>
+              <div className="flex items-center gap-x-7 group">
+                <span className="group-hover:text-gray-300 font-semibold">
+                  Time Works :{" "}
+                </span>
                 <TimePicker.RangePicker format={"HH:mm"} onChange={timeWorks} />
               </div>
-              <div className="flex items-center gap-x-4">
-                <span>Visit Duration : </span>
+              <div className="flex items-center gap-x-4 group">
+                <span className="group-hover:text-gray-300 font-semibold">
+                  Visit Duration :{" "}
+                </span>
                 <TimePicker format={"mm"} onChange={durationTime} />
               </div>
             </div>
-            <div className="w-[50%] p-4">
-              <span>Days Works :</span>
+            <div className="w-[50%] p-4 group">
+              <span className="group-hover:text-gray-300 font-semibold">
+                Days Works :
+              </span>
               <Select
                 mode="multiple"
                 style={{ width: "100%" }}

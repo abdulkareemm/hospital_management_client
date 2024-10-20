@@ -119,19 +119,14 @@ const Dashboard = () => {
         }
       );
       if (response.data.success) {
-        console.log(response.data)
         setAppointments(response.data.appointmentsCount);
         setDoctors(response.data.doctorsCount);
         setPatients(response.data.patientsCount);
-        setClinics(response.data.Hos.clinics);
+        setClinics(response.data.Hos[0].clinics);
       } else {
-        console.log("f")
-        console.log(response)
         toast.error(response.data.msg);
       }
     } catch (err) {
-        console.log("ff");
-
       console.log(err)
       toast.error(err.response.data.msg);
     }
@@ -191,7 +186,6 @@ const Dashboard = () => {
           </div>
           {/* list of users in system */}
           <div>
-            <h1>Clinic List</h1>
             {clinics?.length > 0 ? (
               <Table
                 columns={clinicsColumns}

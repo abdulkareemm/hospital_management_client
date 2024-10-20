@@ -119,15 +119,19 @@ const Dashboard = () => {
         }
       );
       if (response.data.success) {
-        setAppointments(response.data.appointments);
-        setDoctors(response.data.doctors);
-        setPatients(response.data.patients);
-        setClinics(response.data.clinics);
+        console.log(response.data)
+        setAppointments(response.data.appointmentsCount);
+        setDoctors(response.data.doctorsCount);
+        setPatients(response.data.patientsCount);
+        setClinics(response.data.Hos.clinics);
       } else {
+        console.log("f")
         console.log(response)
         toast.error(response.data.msg);
       }
     } catch (err) {
+        console.log("ff");
+
       console.log(err)
       toast.error(err.response.data.msg);
     }
@@ -148,7 +152,7 @@ const Dashboard = () => {
                 <div className="border-2 border-purple-500 p-4 rounded-full">
                   <FaUsersGear className="text-indigo-500 text-3xl" />
                 </div>
-                <h1 className="text-3xl">{doctors.length + 40}</h1>
+                <h1 className="text-3xl">{doctors + 40}</h1>
               </div>
               <h1 className="text-gray-600">Doctors</h1>
               <div className="flex flex-row">
@@ -162,7 +166,7 @@ const Dashboard = () => {
                 <div className="border-2 border-sky-500 p-4 rounded-full">
                   <FaUsers className="text-blue-600 text-3xl" />
                 </div>
-                <h1 className="text-3xl">{patients.length + 65}</h1>
+                <h1 className="text-3xl">{patients + 65}</h1>
               </div>
               <h1 className="text-gray-600">Patients</h1>
               <div className="flex flex-row">
@@ -176,7 +180,7 @@ const Dashboard = () => {
                 <div className="border-2 border-orange-200 p-4 rounded-full">
                   <HiOutlineBanknotes className="text-rose-200  text-3xl" />
                 </div>
-                <h1 className="text-3xl">{appointments.length + 129}</h1>
+                <h1 className="text-3xl">{appointments + 129}</h1>
               </div>
               <h1 className="text-gray-600">Appointments</h1>
               <div className="flex flex-row">

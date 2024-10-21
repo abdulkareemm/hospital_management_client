@@ -112,16 +112,26 @@ const Layout = (props) => {
           })}
         </div>
         <div className="absolute bottom-10">
-          <button
-            className="mr-8 bg-[#9718ec] p-2 w-[100px] text-white rounded-md"
-            onClick={() => {
-              navigate("/");
-              localStorage.clear();
-              dispatch(setUser(null));
-            }}
-          >
-            Logout
-          </button>
+          <div className="flex flex-col gap-5 items-center justify-center">
+            <button
+              className=" bg-blue-700 p-2 w-[130px] text-white rounded-md"
+              onClick={() => {
+                navigate("/");
+              }}
+            >
+              Home
+            </button>
+            <button
+              className=" bg-[#9718ec] p-2 w-[130px] text-white rounded-md"
+              onClick={() => {
+                navigate("/");
+                localStorage.clear();
+                dispatch(setUser(null));
+              }}
+            >
+              Logout
+            </button>
+          </div>
         </div>
       </div>
       {/* body */}

@@ -124,7 +124,7 @@ const UpdateInfo = () => {
           {/* name && password*/}
           <div className="w-[97%] flex items-center gap-x-10">
             <div className="w-[50%] group">
-              <span className="w-[20%] group-hover:text-gray-300 font-semibold">
+              <span className="w-[20%] text-xl font-semibold">
                 Clinic Name :{" "}
               </span>
               <input
@@ -132,7 +132,7 @@ const UpdateInfo = () => {
                 name="name"
                 placeholder="Name..."
                 onChange={changeInput}
-                className="w-[76%] p-2.5 outline-none focus:outline-none border-[1.2px] border-[#c641d4]   rounded-md"
+                className="w-full p-2.5 outline-none focus:outline-none border-[1.2px] border-[#c641d4]   rounded-md"
                 value={updateClinicInfo.name}
               />
             </div>

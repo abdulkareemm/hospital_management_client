@@ -14,14 +14,13 @@ const Dashboard = () => {
   const [appointments, setAppointments] = useState([]);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-
   const doctorsColumns = [
     {
       key: "11",
       title: "Name",
       dataIndex: "name",
       fixed: "left",
-      width: "100px",
+      width: "150px",
     },
     {
       key: "22",
@@ -29,14 +28,14 @@ const Dashboard = () => {
       dataIndex: "avatar",
       width: "100px",
       render: (id, record) => {
-        return <img src={record.avatar.url} alt="" className="w-12 h-8" />;
+        return <img src={record.avatar.url} alt="" className="w-20 h-16" />;
       },
     },
     {
       key: "33",
       title: "Email",
       dataIndex: "email",
-      width: "250px",
+      width: "280px",
     },
     {
       key: "44",
@@ -46,8 +45,20 @@ const Dashboard = () => {
     },
     {
       key: "55",
+      title: "Specialist",
+      dataIndex: "specialist",
+      width: "150px",
+    },
+
+    {
+      key: "65",
       title: "Mobile",
       dataIndex: "mobile",
+      render: (id, record) => {
+        return <span>
+          +{record.mobile}
+        </span>;
+      },
     },
     {
       key: "a",
@@ -132,7 +143,7 @@ const Dashboard = () => {
                 <div className="border-2 border-fuchsia-500 p-4 rounded-full bg-purple-200">
                   <FaUsersGear className="text-[#8932a4] text-3xl" />
                 </div>
-                <h1 className="text-3xl">{doctors.length + 40}</h1>
+                <h1 className="text-3xl">{doctors.length}</h1>
               </div>
               <h1 className="text-black">Doctors</h1>
               <div className="flex flex-row">
@@ -147,7 +158,7 @@ const Dashboard = () => {
                 <div className="border-2 border-fuchsia-500 p-4 rounded-full bg-purple-200">
                   <HiOutlineBanknotes className="text-[#8932a4]  text-3xl" />
                 </div>
-                <h1 className="text-3xl">{appointments.length + 129}</h1>
+                <h1 className="text-3xl">{appointments.length}</h1>
               </div>
               <h1 className="text-black">Appointments</h1>
               <div className="flex flex-row">

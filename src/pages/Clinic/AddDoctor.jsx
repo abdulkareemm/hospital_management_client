@@ -103,49 +103,63 @@ const AddDoctor = () => {
         <form className="flex flex-col h-[420px]">
           {/* name && password*/}
           <div className="w-[97%] flex items-center gap-x-10">
-            <div className="w-[50%] group">
-              <span className="w-[20%] group-hover:text-black font-semibold">
-                Doctor Name :
-              </span>
+            <div className="w-[50%] group flex flex-col gap-2">
+              <div>
+                <span className="w-[20%] text-xl font-semibold">
+                  Doctor Name:
+                </span>
+              </div>
               <input
                 type="text"
                 name="name"
                 placeholder="Name..."
                 onChange={changeInput}
-                className="w-[72%] p-2.5 outline-none focus:outline-none border-[1.2px] border-fuchsia-600  rounded-md"
+                className="w-full p-2.5 outline-none focus:outline-none border-[1.2px] border-fuchsia-600  rounded-md"
               />
             </div>
-            <div className="w-[50%] ">
-              <span className="w-[20%]">Password : </span>
+            <div className="w-[50%]   flex flex-col gap-2">
+              <div>
+                <span className="w-[20%] text-xl font-semibold">
+                  Password :{" "}
+                </span>
+              </div>
               <input
                 type="password"
                 name="password"
                 placeholder="Password..."
                 onChange={changeInput}
-                className="w-[80%] p-2.5 outline-none focus:outline-none border-[1.2px] border-fuchsia-600  rounded-md"
+                className="w-full p-2.5 outline-none focus:outline-none border-[1.2px] border-fuchsia-600  rounded-md"
               />
             </div>
           </div>
           {/* email */}
           <div className="w-[97%] flex items-center gap-x-10 mt-10">
-            <div className="w-[50%] group-hover:text-black font-semibold ">
-              <span className="w-[20%]">Doctor Email : </span>
+            <div className="w-[50%]  flex flex-col gap-2">
+              <div>
+                <span className="w-[20%] text-xl font-semibold">
+                  Doctor Email :{" "}
+                </span>
+              </div>{" "}
               <input
                 type="text"
                 name="email"
                 placeholder="Email..."
                 onChange={changeInput}
-                className="w-[73%] p-2.5 outline-none focus:outline-none border-[1.2px] border-fuchsia-600 rounded-md"
+                className="w-full p-2.5 outline-none focus:outline-none border-[1.2px] border-fuchsia-600 rounded-md"
               />
             </div>
-            <div className="w-[50%] group-hover:text-black font-semibold ">
-              <span className="w-[20%]">Doctor Specialist : </span>
+            <div className="w-[50%]  flex flex-col gap-2 ">
+              <div>
+                <span className="w-[20%] text-xl font-semibold">
+                  Doctor Specialist :{" "}
+                </span>
+              </div>{" "}
               <input
                 type="text"
                 name="specialist"
                 onChange={changeInput}
                 placeholder="Specialist..."
-                className="w-[67%] p-2.5 outline-none focus:outline-none border-[1.2px] border-fuchsia-600  rounded-md"
+                className="w-full p-2.5 outline-none focus:outline-none border-[1.2px] border-fuchsia-600  rounded-md"
               />
             </div>
           </div>
@@ -187,7 +201,9 @@ const AddDoctor = () => {
             </div>
             <div className="w-[50%] group-hover:text-black font-semibold ">
               <div className="w-full flex flex-row items-center">
-                <span className="w-[38%]">Doctor Gender : </span>
+                <span className="w-[38%] text-xl font-semibold">
+                  Doctor Gender :{" "}
+                </span>
                 <div className="flex items-center justify-between mt-2 text-sm w-[70%] mx-12">
                   <div className="flex items-center gap-1">
                     <input
@@ -210,7 +226,9 @@ const AddDoctor = () => {
                 </div>
               </div>
               <div className="w-full flex flex-row items-center mt-5">
-                <span className="w-[25%]">Clinic Name : </span>
+                <span className="w-[25%] text-xl font-semibold">
+                  Clinic Name :{" "}
+                </span>
                 <input
                   type="text"
                   value={user.name}
@@ -219,7 +237,9 @@ const AddDoctor = () => {
                 />
               </div>
               <div className="w-full flex flex-row items-center mt-5">
-                <span className="w-[35%]">Doctor Mobile : </span>
+                <span className="w-[40%] text-xl font-semibold">
+                  Doctor Mobile :{" "}
+                </span>
                 <PhoneInput
                   country={"sy"}
                   className=" p-2.5 rounded-md"
@@ -234,7 +254,9 @@ const AddDoctor = () => {
                 >
                   Create
                 </button>
-                <button className="w-[50%] p-2.5 mt-3 bg-gray-400 hover:bg-fuchsia-500  rounded-md text-black">
+                <button className="w-[50%] p-2.5 mt-3 bg-gray-400 hover:bg-fuchsia-500  rounded-md text-black" onClick={()=>{
+                  navigate("/clinic/dashboard")}
+                }>
                   Cancel
                 </button>
               </div>

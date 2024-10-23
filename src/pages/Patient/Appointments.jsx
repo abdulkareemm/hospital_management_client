@@ -84,11 +84,11 @@ const Appointment = () => {
           setAvialability(true);
         }
       } else {
-        console.log(response) 
+        console.log(response);
         toast.error(response.data.msg);
       }
     } catch (err) {
-      console.log(err)
+      console.log(err);
       toast.error(err.response.data.msg, { duration: 2000 });
     }
   };
@@ -148,7 +148,6 @@ const Appointment = () => {
   }, []);
   return (
     <div className="care-container">
-      <Nav />
       <div className="flex flex-row  w-full items-start gap-5 bg-white mt-12">
         {/* clinic info*/}
         <div className="flex flex-col gap-4 p-2 border-2 border-purple-500 rounded-md bg-white">

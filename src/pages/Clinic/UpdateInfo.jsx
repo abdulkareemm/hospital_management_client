@@ -136,51 +136,54 @@ const UpdateInfo = () => {
                 value={updateClinicInfo.name}
               />
             </div>
-          </div>
-          {/* email && type*/}
-          <div className="w-[97%] flex items-center gap-x-10 mt-10">
             <div className="w-[50%] ">
-              <span className="w-[20%]">Clinic Email : </span>
-              <input
-                type="text"
-                name="email"
-                placeholder="Email..."
-                onChange={changeInput}
-                className="w-[76%] p-2.5 outline-none focus:outline-none border-[1.2px] border-[#c641d4]  rounded-md"
-                value={updateClinicInfo.email}
-              />
-            </div>
-            <div className="w-[50%] ">
-              <span className="w-[20%]">Clinic Type : </span>
+              <span className="w-[20%] text-xl font-semibold">
+                Clinic Type :{" "}
+              </span>
               <input
                 type="text"
                 name="type"
                 onChange={changeInput}
                 placeholder="Type..."
-                className="w-[77%] p-2.5 outline-none focus:outline-none border-[1.2px] border-[#c641d4]   rounded-md"
+                className="w-full p-2.5 outline-none focus:outline-none border-[1.2px] border-[#c641d4]   rounded-md"
                 value={updateClinicInfo.type}
+              />
+            </div>
+          </div>
+          {/* email && type*/}
+          <div className="w-[97%] flex items-center gap-x-10 mt-10">
+            <div className="w-[50%] ">
+              <span className="w-[20%] font-semibold text-xl">
+                Clinic Email :{" "}
+              </span>
+              <input
+                type="text"
+                name="email"
+                placeholder="Email..."
+                onChange={changeInput}
+                className="w-full p-2.5 outline-none focus:outline-none border-[1.2px] border-[#c641d4]  rounded-md"
+                value={updateClinicInfo.email}
               />
             </div>
           </div>
           {/* mobile && fees*/}
           <div className="w-[97%] flex items-center gap-x-10 mt-10">
             <div className="w-[50%] relative">
-              <span>Clinic Fee : </span>
+              <span className="font-semibold text-xl">Clinic Fee : </span>
               <input
                 type="number"
                 name="fees"
                 onChange={changeInput}
                 placeholder="Clinic fees..."
                 min={1}
-                className="w-[80%] p-2.5 px-[2.5rem] outline-none focus:outline-none border-[1.2px] border-[#c641d4]  rounded-md"
+                className="w-full p-2.5 px-[2.5rem] outline-none focus:outline-none border-[1.2px] border-[#c641d4]  rounded-md"
                 value={updateClinicInfo.fees}
               />
-              <div className="absolute top-2 text-2xl left-24 text-gray-400">
-                $
-              </div>
             </div>
-            <div className="w-[50%] flex flex-row items-center">
-              <span className="w-[33%]">Clinic Mobile : </span>
+            <div className="w-[50%] flex flex-col ">
+              <span className="w-[40%] font-semibold text-xl">
+                Clinic Mobile :{" "}
+              </span>
               <PhoneInput
                 country={"sy"}
                 className=" p-2.5 rounded-md"
@@ -192,7 +195,7 @@ const UpdateInfo = () => {
           {/* color picker and image upload */}
           <div className="w-[97%] flex items-center gap-x-10 mt-10">
             <div className="w-[50%] overflow-x-auto flex flex-col gap-y-2">
-              <span className="">Color Highlight : </span>
+              <span className="font-semibold text-xl">Color Highlight : </span>
               <ColorPicker
                 value={updateClinicInfo.color_highlight}
                 onChange={selectColor}
@@ -237,7 +240,7 @@ const UpdateInfo = () => {
           <div className="w-[97%] flex items-center gap-x-10 mt-10  border-[1.2px] border-[#c641d4]  rounded-md">
             <div className="w-[50%] p-4 flex flex-col gap-y-2">
               <div className="flex items-center gap-x-7">
-                <span>Time Works : </span>
+                <span className="font-semibold text-xl">Time Works : </span>
                 <TimePicker.RangePicker
                   format={"HH:mm"}
                   onChange={timeWorks}
@@ -248,7 +251,7 @@ const UpdateInfo = () => {
                 />
               </div>
               <div className="flex items-center gap-x-4">
-                <span>Visit Duration : </span>
+                <span className="font-semibold text-xl">Visit Duration : </span>
                 <TimePicker
                   format={"mm"}
                   onChange={durationTime}

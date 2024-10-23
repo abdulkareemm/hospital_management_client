@@ -61,7 +61,11 @@ const Dashboard = () => {
             >
               Show
             </button>
-            <Modal open={reason} onCancel={() => setReason(false)} footer={null}>
+            <Modal
+              open={reason}
+              onCancel={() => setReason(false)}
+              footer={null}
+            >
               <div className="flex flex-row gap-4">
                 <div>
                   <img
@@ -214,7 +218,7 @@ const Dashboard = () => {
       <Layout>
         {" "}
         <div>
-          <div className="bg-red-100 rounded-lg p-2">
+          <div className="bg-red-100 rounded-lg p-2 mt-4">
             <h1 className="text-2xl text-gray-500 text-center">
               Welcome
               <span className="text-purple-400 italic"> {user.name} </span>
@@ -223,8 +227,8 @@ const Dashboard = () => {
           </div>
         </div>
         {/* list of users in system */}
-        <div className="mt-2">
-          <h1 className="mb-2">
+        <div className="mt-16">
+          <h1 className="mb-6 ">
             Appointments List in
             <span className="text-red-200 mx-1">
               {moment().format("DD-MM-YYYY")}:

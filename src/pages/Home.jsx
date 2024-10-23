@@ -6,7 +6,7 @@ import card2 from "../assets/images/card2.jpg";
 import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import { clinics, features } from "../data/data";
-import { Clinic, Feature, Nav } from "../components";
+import { Clinic, Feature, Footer, Nav } from "../components";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -183,6 +183,7 @@ const Home = () => {
             </Swiper>
           </div>
         </div>
+        <Footer />
       </div>
     </>
   );

@@ -105,6 +105,7 @@ function App() {
             element={<MakeAppointment />}
           />
         </Routes>
+        
       </BrowserRouter>
     </div>
   );

@@ -137,19 +137,25 @@ const Appointments = () => {
     <div className="">
       <Layout>
         <div>
-          <div>
-            <h1>
-              Appointments for
-              <span className="text-purple-600 mx-1">
-                {moment().format("DD-MM-YYYY")}
-              </span>
-              :
+          <div className="flex items-center justify-center">
+            <h1 className=" text-xl font-bold mt-6 p-2 bg-slate-200 rounded-md">
+              Appointments Page
             </h1>
+          </div>
+          <div className="mt-20">
+            Appointments List for{" "}
+            <span className="text-purple-600 mx-1">
+              {moment().format("DD-MM-YYYY")}
+            </span>
+            in{" "}
+            <span className="text-purple-600 mx-1">
+              {user.name}
+            </span>{" "}
+            :
           </div>
         </div>
         {/* list of users in system */}
-        <div>
-          <h1>Doctors List</h1>
+        <div className="mt-5">
           {appointments?.length > 0 ? (
             <Table
               columns={appointmentsColumns}

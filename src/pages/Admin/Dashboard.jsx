@@ -29,7 +29,7 @@ const Dashboard = () => {
       dataIndex: "logo",
       width: "150px",
       render: (id, record) => {
-        return <img src={record.logo.url} alt="" className="w-12 h-8" />;
+        return <img src={record.logo.url} alt="" className="w-16 h-16" />;
       },
     },
     {
